@@ -13,4 +13,5 @@ public class Account {
     String phoneNumber;
     String avatar;
     List<Account>friends;
+    List<Travel> travelHistory;
 }
