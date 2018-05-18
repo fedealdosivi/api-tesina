@@ -1,4 +1,6 @@
-package tesinarest.model;
+package tesinarest.model.part2;
+
+import tesinarest.model.Account;
 
 import java.util.List;
 

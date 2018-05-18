@@ -1,4 +1,4 @@
-package tesinarest.model;
+package tesinarest.model.part2;
 
 import java.util.List;
 
