@@ -21,7 +21,7 @@ public class City {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idcity", nullable = false)
+    @Column(name = "id", nullable = false)
     private long id;
 
     @NotEmpty(message = "Name is required.")
