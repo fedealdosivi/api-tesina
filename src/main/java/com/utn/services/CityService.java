@@ -6,6 +6,8 @@ import com.utn.repositories.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Matias on 16/08/2018.
  */
@@ -61,6 +63,13 @@ public class CityService {
      */
     public City findCityById(Long id){
         return findCityById(id);
+    }
+
+    /**
+     * find all.
+     */
+    public List<City> findAll(){
+        return cityRepository.findAll();
     }
 
     /**
