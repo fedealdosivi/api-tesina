@@ -9,4 +9,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface AccountRepository extends CrudRepository<Account,Long>{
+
+    Account findAccountByPhone(int phone);
+    Account findAccountById(Long id);
 }
