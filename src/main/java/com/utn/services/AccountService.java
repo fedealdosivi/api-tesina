@@ -58,6 +58,13 @@ public class AccountService {
     }
 
     /**
+     * exists.
+     */
+    public boolean exists(Long id){
+        return accountRepository.existsById(id);
+    }
+
+    /**
      * find an account by id.
      */
     public Account findById(Long id){
