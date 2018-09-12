@@ -6,6 +6,8 @@ import com.utn.repositories.StateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by Matias on 16/08/2018.
  */
@@ -13,7 +15,7 @@ import org.springframework.stereotype.Service;
 public class StateService {
 
     @Autowired
-    StateRepository stateRepository;
+    private StateRepository stateRepository;
 
     public void save(State state){
         stateRepository.save(state);
@@ -39,5 +41,9 @@ public class StateService {
 
     public void delete(State state){
         stateRepository.delete(state);
+    }
+
+    public List<State> findStatesByCountryId(Long id){
+        return stateRepository.findStatesByCountry_Id(id);
     }
 }

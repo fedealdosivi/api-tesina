@@ -14,7 +14,7 @@ import java.util.List;
 public class CountryService {
 
     @Autowired
-    CountryRepository countryRepository;
+    private CountryRepository countryRepository;
 
     public void save(Country country){
         countryRepository.save(country);

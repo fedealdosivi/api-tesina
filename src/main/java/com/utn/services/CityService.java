@@ -15,7 +15,7 @@ import java.util.List;
 public class CityService {
 
     @Autowired
-    CityRepository cityRepository;
+    private CityRepository cityRepository;
 
     /**
      * save.
