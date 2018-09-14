@@ -18,14 +18,14 @@ public class AccountService {
     /**
      * save a new account.
      */
-    public void save (Account account){
-        accountRepository.save(account);
+    public Account save (Account account){
+        return accountRepository.save(account);
     }
 
     /**
      * save a new account 2.
      */
-    public void save(String name, String surname, String email, int age, int phone, City city){
+    public Account save(String name, String surname, String email, int age, int phone, City city){
         Account account = new Account();
         account.setName(name);
         account.setSurname(surname);
@@ -33,13 +33,13 @@ public class AccountService {
         account.setAge(age);
         account.setPhone(phone);
         account.setCity(city);
-        accountRepository.save(account);
+        return  accountRepository.save(account);
     }
 
     /**
      * update an account by id.
      */
-    public void save(Long id, String name, String surname, String email, int age, int phone, City city){
+    public Account save(Long id, String name, String surname, String email, int age, int phone, City city){
         Account account = accountRepository.findAccountById(id);
         account.setName(name);
         account.setSurname(surname);
@@ -47,14 +47,14 @@ public class AccountService {
         account.setAge(age);
         account.setPhone(phone);
         account.setCity(city);
-        accountRepository.save(account);
+        return accountRepository.save(account);
     }
 
     /**
      * delete by id.
      */
     public void delete(Long id){
-        accountRepository.delete(accountRepository.findAccountById(id));
+        accountRepository.deleteById(id);
     }
 
     /**

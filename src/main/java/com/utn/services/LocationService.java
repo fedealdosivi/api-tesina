@@ -14,20 +14,22 @@ public class LocationService {
     @Autowired
     private LocationRepository locationRepository;
 
-    public void save(Location location){locationRepository.save(location);}
+    public Location save(Location location){
+        return locationRepository.save(location);
+    }
 
-    public void save(double latitude, double longitude){
+    public Location save(double latitude, double longitude){
         Location location = new Location();
         location.setLatitude(latitude);
         location.setLongitude(longitude);
-        locationRepository.save(location);
+        return locationRepository.save(location);
     }
 
-    public void save(Long id, double latitude, double longitude){
+    public Location save(Long id, double latitude, double longitude){
         Location location = locationRepository.findLocationById(id);
         location.setLatitude(latitude);
         location.setLongitude(longitude);
-        locationRepository.save(location);
+        return locationRepository.save(location);
     }
 
     public Location findLocationByLatitudeAndLongitude(double lat, double lon){
@@ -38,7 +40,11 @@ public class LocationService {
         return findLocationById(id);
     }
 
-    public void delete (Location location){ locationRepository.delete(location);}
+    public void delete (Location location){
+        locationRepository.delete(location);
+    }
 
-    public void delete(Long id){locationRepository.delete(findLocationById(id));}
+    public void delete(Long id){
+        locationRepository.deleteById(id);
+    }
 }

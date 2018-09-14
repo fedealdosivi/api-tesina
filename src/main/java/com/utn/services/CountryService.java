@@ -16,24 +16,24 @@ public class CountryService {
     @Autowired
     private CountryRepository countryRepository;
 
-    public void save(Country country){
-        countryRepository.save(country);
+    public Country save(Country country){
+        return countryRepository.save(country);
     }
 
-    public void save(String name){
+    public Country save(String name){
         Country country = new Country();
         country.setName(name);
-        countryRepository.save(country);
+        return countryRepository.save(country);
     }
 
-    public void save(Long id, String name){
+    public Country save(Long id, String name){
         Country country = countryRepository.findCountryById(id);
         country.setName(name);
-        countryRepository.save(country);
+        return countryRepository.save(country);
     }
 
     public void delete(Long id){
-        countryRepository.delete(countryRepository.findCountryById(id));
+        countryRepository.deleteById(id);
     }
 
     public void delete(Country country){

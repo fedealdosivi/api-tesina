@@ -17,27 +17,31 @@ public class TravelService {
     @Autowired
     private TravelRepository travelRepository;
 
-    public void save(Travel travel) {
-        travelRepository.save(travel);
+    public Travel save(Travel travel) {
+        return travelRepository.save(travel);
     }
 
-    public void save(Location from, Location to){
+    public Travel save(Location from, Location to){
         Travel travel = new Travel();
         travel.setFrom(from);
         travel.setTo(to);
-        travelRepository.save(travel);
+        return travelRepository.save(travel);
     }
 
-    public void save(Long id, Location from, Location to){
+    public Travel save(Long id, Location from, Location to){
         Travel travel = travelRepository.findTravelById(id);
         travel.setFrom(from);
         travel.setTo(to);
-        travelRepository.save(travel);
+        return travelRepository.save(travel);
     }
 
-    public void delete(Travel travel){travelRepository.delete(travel);}
+    public void delete(Travel travel){
+        travelRepository.delete(travel);
+    }
 
-    public Travel findTravelById(Long id){return travelRepository.findTravelById(id);}
+    public Travel findTravelById(Long id){
+        return travelRepository.findTravelById(id);
+    }
 
     public List<Travel> findTravelsByFrom(Location from){return travelRepository.findTravelsByFrom(from);}
 

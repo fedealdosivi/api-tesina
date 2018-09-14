@@ -17,26 +17,26 @@ public class StateService {
     @Autowired
     private StateRepository stateRepository;
 
-    public void save(State state){
-        stateRepository.save(state);
+    public State save(State state){
+        return stateRepository.save(state);
     }
 
-    public void save(String name, Country country){
+    public State save(String name, Country country){
         State state = new State();
         state.setName(name);
         state.setCountry(country);
-        stateRepository.save(state);
+        return stateRepository.save(state);
     }
 
-    public void save(Long id, String name, Country country){
+    public State save(Long id, String name, Country country){
         State state = stateRepository.findStateById(id);
         state.setName(name);
         state.setCountry(country);
-        stateRepository.save(state);
+        return stateRepository.save(state);
     }
 
     public void delete(Long id){
-        stateRepository.delete(stateRepository.findStateById(id));
+        stateRepository.deleteById(id);
     }
 
     public void delete(State state){

@@ -20,35 +20,35 @@ public class CityService {
     /**
      * save.
      */
-    public void save(City city){
-        cityRepository.save(city);
+    public City save(City city){
+        return cityRepository.save(city);
     }
 
     /**
      * save 2.
      */
-    public void save(String name, State state){
+    public City save(String name, State state){
         City city = new City();
         city.setName(name);
         city.setState(state);
-        cityRepository.save(city);
+        return cityRepository.save(city);
     }
 
     /**
      * update.
      */
-    public void save(Long id, String name, State state){
+    public City save(Long id, String name, State state){
         City city = this.findCityById(id);
         city.setName(name);
         city.setState(state);
-        cityRepository.save(city);
+        return cityRepository.save(city);
     }
 
     /**
      * delete 1.
      */
     public void delete(Long id){
-        cityRepository.delete(this.findCityById(id));
+        cityRepository.deleteById(id);
     }
 
     /**
